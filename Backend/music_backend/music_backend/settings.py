@@ -141,3 +141,4 @@ REST_FRAMEWORK = {
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
+AUTO_IMPORT = os.environ.get("AUTO_IMPORT_TRACKS") == "1"
