@@ -1,31 +1,10 @@
-import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-const isProtectedRoute = createRouteMatcher([
-  "/dashboard(.*)",
-]);
-
-const isPublicRoute = createRouteMatcher([
-  "/",
-  "/about",
-  "/music-library",
-  "/how-it-works",
-  "/for-artists",
-  "/pricing",
-  "/contact",
-  "/faq",
-  "/login",
-  "/sign-up",
-  "/terms",
-  "/privacy",
-  "/license",
-]);
-
-export default clerkMiddleware(async (auth, req) => {
-  // Only protect dashboard routes - skip public routes entirely
-  if (!isPublicRoute(req) && isProtectedRoute(req)) {
-    await auth.protect();
-  }
-});
+export function middleware(request: NextRequest) {
+  // Allow all routes - no authentication required
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: [
@@ -35,4 +14,3 @@ export const config = {
     "/(api|trpc)(.*)",
   ],
 };
-

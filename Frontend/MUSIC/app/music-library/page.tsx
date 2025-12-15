@@ -14,7 +14,7 @@ export default function MusicLibraryPage() {
 useEffect(() => {
   console.log("USE EFFECT STARTED");
 
-  fetch("http://127.0.0.1:8000/api/v1/tracks/")
+  fetch("https://latest-music.onrender.com/api/v1/tracks/")
     .then(res => {
       console.log("STATUS:", res.status);
       return res.json();

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { UserButton } from "@clerk/nextjs";
 import { IMAGES } from "@/lib/images";
 
 interface NavLink {
@@ -61,18 +60,17 @@ export function DashboardNav() {
               </Link>
             ))}
             
-            {/* User Button */}
-            <UserButton 
-              appearance={{
-                elements: {
-                  avatarBox: "w-9 h-9",
-                },
-              }}
-            />
+            {/* Home Link */}
+            <Link
+              href="/"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium bg-black/5 text-black/70 hover:text-black hover:bg-black/10 transition-all"
+            >
+              <span>🏠</span>
+              <span className="hidden md:inline">Home</span>
+            </Link>
           </div>
         </div>
       </div>
     </nav>
   );
 }
-

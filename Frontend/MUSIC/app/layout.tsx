@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import "./globals.css";
 
@@ -32,14 +31,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" className={inter.variable} suppressHydrationWarning>
-        <body className="font-sans antialiased" suppressHydrationWarning>
-          <ScrollToTop />
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        <ScrollToTop />
+        {children}
+      </body>
+    </html>
   );
 }
-

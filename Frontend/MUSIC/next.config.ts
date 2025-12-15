@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [],
+    domains: ['latest-music.onrender.com'],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
   },
@@ -28,19 +28,14 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.clerk.accounts.dev https://*.clerk.com blob:",
-              "style-src 'self' 'unsafe-inline' https://*.clerk.accounts.dev https://fonts.googleapis.com",
-              "style-src-elem 'self' 'unsafe-inline' https://*.clerk.accounts.dev https://fonts.googleapis.com",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' blob:",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: https: blob:",
               "font-src 'self' data: https://fonts.gstatic.com",
-
-              // ⭐⭐⭐ FIXED LINE ⭐⭐⭐
-              "connect-src 'self' http://127.0.0.1:8000 https://*.clerk.accounts.dev https://*.clerk.com https://clerk-telemetry.com",
-"media-src 'self' http://127.0.0.1:8000 blob: data:",
-,
-,
-
-              "frame-src 'self' https://*.clerk.accounts.dev",
+              "connect-src 'self' http://127.0.0.1:8000 https://latest-music.onrender.com",
+              "media-src 'self' http://127.0.0.1:8000 https://latest-music.onrender.com blob: data:",
+              "frame-src 'self'",
               "worker-src 'self' blob:",
             ].join('; '),
           },
