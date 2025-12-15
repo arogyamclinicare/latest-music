@@ -135,12 +135,11 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
-    # Vercel production and preview deployments
+    # Vercel production deployment
     "https://latest-music.vercel.app",
-    "https://*.vercel.app",
 ]
 
-# Allow all Vercel preview deployments (they use random subdomains)
+# Allow all Vercel preview deployments (they use random subdomains like project-abc123.vercel.app)
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.vercel\.app$",
 ]
