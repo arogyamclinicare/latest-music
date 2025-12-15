@@ -130,14 +130,20 @@ STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 CORS_ALLOWED_ORIGINS = [
+    # Local development
     "http://localhost:3000",
     "http://localhost:3001",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
+    # Vercel production and preview deployments
+    "https://latest-music.vercel.app",
+    "https://*.vercel.app",
 ]
 
-# Allow all origins in development (uncomment if needed)
-# CORS_ALLOW_ALL_ORIGINS = True
+# Allow all Vercel preview deployments (they use random subdomains)
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
+]
 
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
