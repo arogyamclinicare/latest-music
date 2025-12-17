@@ -28,7 +28,7 @@ const heroTextClass = "text-2xl md:text-3xl lg:text-4xl font-light tracking-tigh
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-12 overflow-hidden">
-      {/* Background Image - Flipped */}
+      {/* Background Image */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
@@ -36,7 +36,6 @@ export function HeroSection() {
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          transform: 'scaleX(-1)',
         }}
         aria-hidden="true"
       />
