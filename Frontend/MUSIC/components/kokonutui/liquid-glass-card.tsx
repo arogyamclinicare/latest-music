@@ -239,6 +239,20 @@ function NotificationCenter() {
     cover: "/covers/MVRLLIN_-_MONTAGEM_AURORA_4_fix.jpg",
   };
 
+  // Autoplay on mount
+  React.useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.volume = 0.5;
+      audio.play().then(() => {
+        setIsPlaying(true);
+      }).catch(() => {
+        // Autoplay blocked by browser - user needs to click play
+        setIsPlaying(false);
+      });
+    }
+  }, []);
+
   const togglePlay = () => {
     if (audioRef.current) {
       if (isPlaying) {
