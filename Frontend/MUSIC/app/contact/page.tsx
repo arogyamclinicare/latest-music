@@ -1,10 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import GradientBackground from "@/components/GradientBackground";
 import Navbar from "@/components/Navbar";
 import { Heading, Text } from "@/components/ui/Typography";
-import { Section } from "@/components/ui/Layout";
 import { FadeIn } from "@/components/ui/Animations";
 import { Button } from "@/components/ui/Button";
 
@@ -15,16 +13,44 @@ export default function ContactPage() {
     subject: "",
     message: "",
   });
+  const [result, setResult] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission - will integrate with backend later
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setResult("");
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("access_key", "5d013109-a952-4a90-ac3f-593b3b7ad488");
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("subject", formData.subject);
+    formDataToSend.append("message", formData.message);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Message sent successfully!");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setResult("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setResult("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <>
-      <GradientBackground />
       <Navbar />
       
       <main className="pt-24 pb-20">
@@ -39,8 +65,8 @@ export default function ContactPage() {
               
               <FadeIn delay={0.2}>
                 <Text size="xl" variant="muted">
-                  Have a question? We'd love to hear from you. Send us a message 
-                  and we'll respond as soon as possible.
+                  Have a question? We&apos;d love to hear from you. Send us a message 
+                  and we&apos;ll respond as soon as possible.
                 </Text>
               </FadeIn>
             </div>
@@ -135,9 +161,15 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full">
-                  Send Message
+                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
+
+                {result && (
+                  <p className={`text-center mt-4 ${result.includes("success") ? "text-green-600" : "text-red-600"}`}>
+                    {result}
+                  </p>
+                )}
               </form>
             </FadeIn>
           </div>

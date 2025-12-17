@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['latest-music.onrender.com'],
+    domains: ['res.cloudinary.com'],
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
   },
@@ -33,8 +33,8 @@ const nextConfig: NextConfig = {
               "style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "img-src 'self' data: https: blob:",
               "font-src 'self' data: https://fonts.gstatic.com",
-              "connect-src 'self' http://127.0.0.1:8000 https://latest-music.onrender.com",
-              "media-src 'self' http://127.0.0.1:8000 https://latest-music.onrender.com blob: data:",
+              "connect-src 'self' https://res.cloudinary.com https://api.web3forms.com",
+              "media-src 'self' https://res.cloudinary.com blob: data:",
               "frame-src 'self'",
               "worker-src 'self' blob:",
             ].join('; '),

@@ -24,10 +24,14 @@ export default function AnimatedLogo() {
            lg:w-[520px] 
            xl:w-[600px] 
            select-none"
-        animate={{ y: [0, -30, 0] }}
+        animate={{ 
+          y: [0, -20, 0],
+          scale: [1, 1.02, 1]
+        }}
         transition={{
-          duration: 2,
+          duration: 3,
           repeat: Infinity,
+          repeatType: "loop",
           ease: "easeInOut",
         }}
         whileHover={{

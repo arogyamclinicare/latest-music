@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import GradientBackground from "@/components/GradientBackground";
 import Navbar from "@/components/Navbar";
 import { Heading, Text } from "@/components/ui/Typography";
 import { Section } from "@/components/ui/Layout";
@@ -31,7 +30,6 @@ export default function FAQPage() {
 
   return (
     <>
-      <GradientBackground />
       <Navbar />
       
       <main className="pt-32">

@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import GradientBackground from "@/components/GradientBackground";
 import Navbar from "@/components/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
 
@@ -32,10 +31,9 @@ const Footer = dynamic(() => import("@/components/Footer"), {
 export default function Home() {
   return (
     <>
-      <GradientBackground />
       <Navbar />
       
-      <main>
+      <main className="bg-gradient-to-b from-white via-white to-purple-50/50">
         <HeroSection />
         <CreatorsCarousel />
         <CategoriesSection />

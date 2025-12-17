@@ -1,52 +1,17 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { FadeIn } from "@/components/ui/Animations";
 import { Heading, Text } from "@/components/ui/Typography";
 
 export function CreatorsCarousel() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let scrollAmount = 0;
-    let animationFrameId: number;
-    let lastTime = 0;
-    const scrollSpeed = 0.5; // pixels per frame
-
-    const scroll = (currentTime: number) => {
-      if (currentTime - lastTime >= 16) { // ~60fps
-        scrollAmount += scrollSpeed;
-        if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-          scrollAmount = 0;
-        }
-        scrollContainer.scrollLeft = scrollAmount;
-        lastTime = currentTime;
-      }
-      animationFrameId = requestAnimationFrame(scroll);
-    };
-
-    animationFrameId = requestAnimationFrame(scroll);
-    return () => cancelAnimationFrame(animationFrameId);
-  }, []);
-
   const creators = [
-    "TechReviewer Pro",
-    "Daily Vlog Studio",
-    "Gaming Legends",
-    "Fitness Journey",
-    "Food Explorer",
-    "Travel Tales",
-    "Business Insights",
-    "Creative Corner",
-    "Music Vibes",
-    "Podcast Hub",
+    "Gukbap",
+    "MVRLLIN",
+    "Themio",
   ];
 
-  // Duplicate for seamless loop (reduced from 3x to 2x for performance)
-  const duplicatedCreators = [...creators, ...creators];
+  // Duplicate multiple times for seamless infinite loop
+  const duplicatedCreators = [...creators, ...creators, ...creators, ...creators];
 
   return (
     <section className="py-20 bg-black/[0.02]">
@@ -64,13 +29,8 @@ export function CreatorsCarousel() {
 
         <FadeIn delay={0.2}>
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#f8f8f8] to-transparent z-10" />
-            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#f8f8f8] to-transparent z-10" />
-            
             <div
-              ref={scrollRef}
-              className="flex gap-8 overflow-x-hidden whitespace-nowrap"
-              style={{ scrollBehavior: 'auto' }}
+              className="flex gap-8 whitespace-nowrap animate-scroll"
             >
               {duplicatedCreators.map((creator, index) => (
                 <div
@@ -84,7 +44,23 @@ export function CreatorsCarousel() {
           </div>
         </FadeIn>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 15s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 }
-

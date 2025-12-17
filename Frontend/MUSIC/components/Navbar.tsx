@@ -13,8 +13,7 @@ const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Music Library", href: "/music-library" },
   { label: "About", href: "/about" },
-  { label: "For Artists", href: "/for-artists" },
-  { label: "Licensing Agreement", href: "/pricing" },
+  { label: "Contact", href: "/contact" },
 ];
 
 function Logo() {
