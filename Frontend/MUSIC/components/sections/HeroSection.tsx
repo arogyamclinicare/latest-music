@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { TextEffect } from "@/components/core/text-effect";
 import { NotificationCenter } from "@/components/kokonutui/liquid-glass-card";
 
@@ -28,16 +29,15 @@ const heroTextClass = "text-2xl md:text-3xl lg:text-4xl font-light tracking-tigh
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 pb-12 overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          backgroundImage: 'url(/images/waveform-bg.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-        aria-hidden="true"
+      {/* Background Image - Optimized */}
+      <Image
+        src="/images/waveform-bg.png"
+        alt=""
+        fill
+        priority
+        quality={75}
+        className="object-cover z-0 pointer-events-none"
+        sizes="100vw"
       />
       
       <div className="max-w-7xl mx-auto px-6 md:px-8 w-full relative z-10">
