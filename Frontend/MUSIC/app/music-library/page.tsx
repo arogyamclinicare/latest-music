@@ -12,7 +12,7 @@ const tracks = [
     id: 1,
     title: "MONTAGEM AURORA",
     artist: "MVRLLIN",
-    genre: "Electronic",
+    genre: "Phonk",
     duration: 102, // 1:42
     audio_url: "https://res.cloudinary.com/dew8vh4qt/video/upload/v1765968572/MONTAGEM_AURORA_phl1a9.wav",
     cover: "/covers/MVRLLIN_-_MONTAGEM_AURORA_4_fix.jpg",
@@ -21,7 +21,7 @@ const tracks = [
     id: 2,
     title: "Amusement",
     artist: "Gukbap",
-    genre: "Electronic",
+    genre: "Classical",
     duration: 109, // 1:49
     audio_url: "https://res.cloudinary.com/dew8vh4qt/video/upload/v1765970751/gukbap_-_Amusement_jddodz.wav",
     cover: "/covers/AMUSEMENT LOGO COVER ART.png",
@@ -30,7 +30,7 @@ const tracks = [
     id: 3,
     title: "Energee",
     artist: "Gukbap",
-    genre: "Electronic",
+    genre: "Funk",
     duration: 66, // 1:06
     audio_url: "https://res.cloudinary.com/dew8vh4qt/video/upload/v1765971290/gukbap_-_Energee_whoijq.wav",
     cover: "/covers/ENERGEE LOGO COVER ART.png",
@@ -39,7 +39,7 @@ const tracks = [
     id: 4,
     title: "Japanese Summer",
     artist: "Gukbap",
-    genre: "Lo-Fi",
+    genre: "Easy Listening",
     duration: 151, // 2:31
     audio_url: "https://res.cloudinary.com/dew8vh4qt/video/upload/v1765971497/gukbap_-_Japanese_Summer_knw1rq.wav",
     cover: "/covers/JAPANEASE SUMMER LOGO COVER ART.png",
@@ -48,7 +48,7 @@ const tracks = [
     id: 5,
     title: "Killers Dance",
     artist: "Gukbap",
-    genre: "Electronic",
+    genre: "Funk",
     duration: 88, // 1:28
     audio_url: "https://res.cloudinary.com/dew8vh4qt/video/upload/v1765971808/gukbap_-_Killers_Dance_zg1nfw.wav",
     cover: "/covers/KILLERS DANCE LOGO COVER ART.png",
@@ -75,7 +75,7 @@ const tracks = [
     id: 8,
     title: "Progression",
     artist: "Themio",
-    genre: "Electronic",
+    genre: "Funk",
     duration: 65, // 1:05
     audio_url: "https://res.cloudinary.com/dew8vh4qt/video/upload/v1765972715/Themio_-_Progression_wjtvps.wav",
     cover: "/covers/PROGRESSION LOGO COVER ART.png",
@@ -84,7 +84,7 @@ const tracks = [
     id: 9,
     title: "The Intermission",
     artist: "Themio",
-    genre: "Cinematic",
+    genre: "Funk",
     duration: 278, // 4:38
     audio_url: "https://res.cloudinary.com/dew8vh4qt/video/upload/v1765973282/Themio_-_The_Intermission_dzuzjc.wav",
     cover: "/covers/THE INTERMSSION LOGO COVER ART.png",
@@ -93,7 +93,7 @@ const tracks = [
     id: 10,
     title: "Walking Confidence",
     artist: "Themio",
-    genre: "Hip Hop",
+    genre: "Pop",
     duration: 89, // 1:29
     audio_url: "https://res.cloudinary.com/dew8vh4qt/video/upload/v1765973398/Walking_Confidence_rwlrx6.wav",
     cover: "/covers/WALKING CONFIDENCE LOGO COVER ART.png",
