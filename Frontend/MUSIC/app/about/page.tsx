@@ -29,10 +29,15 @@ export default function AboutPage() {
 
               <FadeIn delay={0.2}>
                 <Text size="xl" variant="muted" className="max-w-xl">
-                  We&apos;re on a mission to empower content creators with the perfect
-                  soundtrack for their stories. Listen to our entire library for
-                  free, and subscribe when you&apos;re ready to download and use
-                  commercially.
+                  Earthquake studio is a record label, publisher and distributor dedicated to empowering
+                  up and coming artists through a modern strategy of viral marketing. We focus on smaller artists 
+                  that have undiscovered talent, that needs to be heard.
+                  <br /><br />
+                  While most record labels stick to a traditional approach, we focus more on what works
+                  and what doesn&apos;t. Partnering up with creators and artists from all over the world. We aim to SHAKE the
+                  music industry.
+                  <br /><br />
+                  <strong>Established in LONDON 2025</strong>
                 </Text>
               </FadeIn>
             </div>
