@@ -12,12 +12,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Earthquakestudio - Music for Content Creators",
-  description: "Premium music streaming platform tailored for content creators. Listen free, subscribe to download and use commercially. 50,000+ tracks for your videos, podcasts, and content.",
+  description: "UK record label, helping new artists into the spotlight.",
   keywords: ["royalty free music", "content creator music", "background music", "youtube music", "podcast music", "video music"],
   authors: [{ name: "Earthquakestudio" }],
   openGraph: {
     title: "Earthquakestudio - Music for Content Creators",
-    description: "Listen free, subscribe to download. 50,000+ tracks for your content.",
+    description: "UK record label, helping new artists into the spotlight.",
     type: "website",
   },
   icons: {
